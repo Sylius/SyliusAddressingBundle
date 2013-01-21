@@ -15,7 +15,7 @@ use Doctrine\Common\Persistence\ObjectRepository;
 use Sylius\Bundle\AddressingBundle\Model\ZoneInterface;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
-use Symfony\Component\Form\Util\PropertyPath;
+use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
  * Zone to id transformer.
@@ -63,9 +63,7 @@ class ZoneToIdentifierTransformer implements DataTransformerInterface
             throw new UnexpectedTypeException($zone, 'Sylius\Bundle\AddressingBundle\Model\ZoneInterface');
         }
 
-        $propertyPath = new PropertyPath($this->identifier);
-
-        return $propertyPath->getValue($zone);
+        return PropertyAccess::getPropertyAccessor()->getValue($zone, $this->identifier);
     }
 
     /**
