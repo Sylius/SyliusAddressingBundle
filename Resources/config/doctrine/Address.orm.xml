@@ -15,8 +15,8 @@
                   xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
 
     <mapped-superclass name="Sylius\Bundle\AddressingBundle\Entity\Address" table="sylius_address">
-        <field name="firstName" column="first_name" type="string" />
-        <field name="lastName" column="last_name" type="string" />
+        <field name="firstName" column="first_name" type="string" nullable="true" />
+        <field name="lastName" column="last_name" type="string" nullable="true" />
         <many-to-one field="country" target-entity="Sylius\Bundle\AddressingBundle\Model\CountryInterface">
             <join-column name="country_id" referenced-column-name="id" />
         </many-to-one>
