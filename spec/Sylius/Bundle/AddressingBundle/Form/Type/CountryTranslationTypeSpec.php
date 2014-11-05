@@ -17,19 +17,18 @@ use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * @author Julien Janvier <j.janvier@gmail.com>
  * @author Gonzalo Vilaseca <gvilaseca@reiss.co.uk>
  */
-class CountryTypeSpec extends ObjectBehavior
+class CountryTranslationTypeSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith('Country', array('sylius'));
+        $this->beConstructedWith('CountryTranslation', array('sylius'));
     }
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\AddressingBundle\Form\Type\CountryType');
+        $this->shouldHaveType('Sylius\Bundle\AddressingBundle\Form\Type\CountryTranslationType');
     }
 
     function it_is_a_form_type()
@@ -39,23 +38,13 @@ class CountryTypeSpec extends ObjectBehavior
 
     function it_has_a_valid_name()
     {
-        $this->getName()->shouldReturn('sylius_country');
+        $this->getName()->shouldReturn('sylius_country_translation');
     }
 
     function it_builds_form_with_proper_fields(FormBuilder $builder)
     {
         $builder
-            ->add('translations', 'a2lix_translationsForms', Argument::any())
-            ->shouldBeCalled()
-            ->willReturn($builder);
-
-        $builder
-            ->add('isoName', 'text', Argument::any())
-            ->shouldBeCalled()
-            ->willReturn($builder);
-
-        $builder
-            ->add('provinces', 'collection', Argument::any())
+            ->add('name', 'text', Argument::any())
             ->shouldBeCalled()
             ->willReturn($builder);
 
@@ -67,7 +56,7 @@ class CountryTypeSpec extends ObjectBehavior
         $resolver
             ->setDefaults(
                 array(
-                    'data_class'        => 'Country',
+                    'data_class'        => 'CountryTranslation',
                     'validation_groups' => array('sylius')
                 )
             )
