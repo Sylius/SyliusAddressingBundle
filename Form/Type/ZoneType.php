@@ -25,17 +25,13 @@ use Symfony\Component\Form\FormEvents;
 
 final class ZoneType extends AbstractResourceType
 {
-    private array $scopeChoices;
-
     /**
      * @param string[] $validationGroups
      * @param string[] $scopeChoices
      */
-    public function __construct(string $dataClass, array $validationGroups, array $scopeChoices = [])
+    public function __construct(string $dataClass, array $validationGroups, private array $scopeChoices = [])
     {
         parent::__construct($dataClass, $validationGroups);
-
-        $this->scopeChoices = $scopeChoices;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -71,9 +67,7 @@ final class ZoneType extends AbstractResourceType
             ];
 
             if ($zone->getType() === ZoneInterface::TYPE_ZONE) {
-                $entryOptions['entry_options']['choice_filter'] = static function (?ZoneInterface $subZone) use ($zone): bool {
-                    return $subZone !== null && $zone->getId() !== $subZone->getId();
-                };
+                $entryOptions['entry_options']['choice_filter'] = static fn (?ZoneInterface $subZone): bool => $subZone !== null && $zone->getId() !== $subZone->getId();
             }
 
             $event->getForm()->add('members', CollectionType::class, [
