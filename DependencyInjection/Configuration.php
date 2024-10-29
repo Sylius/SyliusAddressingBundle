@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AddressingBundle\DependencyInjection;
 
-use Sylius\Bundle\AddressingBundle\Controller\ProvinceController;
 use Sylius\Bundle\AddressingBundle\Doctrine\ORM\AddressRepository;
 use Sylius\Bundle\AddressingBundle\Doctrine\ORM\CountryRepository;
 use Sylius\Bundle\AddressingBundle\Doctrine\ORM\ProvinceRepository;
@@ -134,7 +133,7 @@ final class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('model')->defaultValue(Province::class)->cannotBeEmpty()->end()
                                         ->scalarNode('interface')->defaultValue(ProvinceInterface::class)->cannotBeEmpty()->end()
-                                        ->scalarNode('controller')->defaultValue(ProvinceController::class)->cannotBeEmpty()->end()
+                                        ->scalarNode('controller')->defaultValue(ResourceController::class)->cannotBeEmpty()->end()
                                         ->scalarNode('repository')->defaultValue(ProvinceRepository::class)->cannotBeEmpty()->end()
                                         ->scalarNode('factory')->defaultValue(Factory::class)->end()
                                         ->scalarNode('form')->defaultValue(ProvinceType::class)->cannotBeEmpty()->end()
