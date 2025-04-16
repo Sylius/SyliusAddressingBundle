@@ -27,7 +27,7 @@ final class ZoneMatcherTest extends KernelTestCase
         $this->loadFixtures();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_matches_all_zones_with_their_parents(): void
     {
         $address = new Address();
@@ -48,7 +48,7 @@ final class ZoneMatcherTest extends KernelTestCase
         $this->assertArrayHasKey('NATO', $matchedZones);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_matches_all_zones_with_their_parents_with_restricting_by_scope(): void
     {
         $address = new Address();

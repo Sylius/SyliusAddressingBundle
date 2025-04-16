@@ -80,9 +80,7 @@ final class ZoneChoiceTypeTest extends TypeTestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_all_scopes_by_default(): void
     {
         $this->zoneRepository->findBy([])->willReturn([
@@ -94,9 +92,7 @@ final class ZoneChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['All', 'Tax', 'Shipping']);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_all_scopes_when_zone_scope_set_to_all(): void
     {
         $this->zoneRepository->findBy([])->willReturn([
@@ -108,9 +104,7 @@ final class ZoneChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['All', 'Tax', 'Shipping'], ['zone_scope' => AddressingScope::ALL]);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_tax_scopes_when_zone_scope_set_to_tax(): void
     {
         $this->zoneRepository->findBy(['scope' => ['tax', AddressingScope::ALL]])->willReturn([
@@ -121,9 +115,7 @@ final class ZoneChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['All', 'Tax'], ['zone_scope' => 'tax']);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_shipping_scopes_when_zone_scope_set_to_shipping(): void
     {
         $this->zoneRepository->findBy(['scope' => ['shipping', AddressingScope::ALL]])->willReturn([

@@ -74,7 +74,7 @@ final class CountryChoiceTypeTest extends TypeTestCase
         ];
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_only_enabled_countries_by_default(): void
     {
         $this->countryRepository->findBy(['enabled' => true])->willReturn([
@@ -85,7 +85,7 @@ final class CountryChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['France', 'Poland']);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_all_countries_when_option_enabled_is_false(): void
     {
         $this->countryRepository->findAll()->willReturn([
@@ -97,7 +97,7 @@ final class CountryChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['Austria', 'France', 'Poland'], ['enabled' => false]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_enabled_countries_in_an_alphabetical_order(): void
     {
         $this->countryRepository->findBy(['enabled' => true])->willReturn([
@@ -108,7 +108,7 @@ final class CountryChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['France', 'Poland']);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_all_countries_in_an_alphabetical_order(): void
     {
         $this->countryRepository->findAll()->willReturn([
@@ -120,7 +120,7 @@ final class CountryChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['Austria', 'France', 'Poland'], ['enabled' => false]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_all_filtered_out_countries(): void
     {
         $this->countryRepository->findAll()->willReturn([
@@ -132,7 +132,7 @@ final class CountryChoiceTypeTest extends TypeTestCase
         $this->assertChoicesLabels(['Poland'], ['choice_filter' => static fn (?CountryInterface $country): bool => $country !== null && $country->getName() === 'Poland', 'enabled' => false]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_enabled_filtered_out_countries(): void
     {
         $this->countryRepository->findBy(['enabled' => true])->willReturn([

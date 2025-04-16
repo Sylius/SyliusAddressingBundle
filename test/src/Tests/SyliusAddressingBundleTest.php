@@ -20,9 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 final class SyliusAddressingBundleTest extends WebTestCase
 {
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function its_services_are_initializable(): void
     {
         /** @var ContainerBuilder $container */

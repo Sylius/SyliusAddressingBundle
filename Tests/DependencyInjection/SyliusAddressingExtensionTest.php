@@ -18,7 +18,7 @@ use Sylius\Bundle\AddressingBundle\DependencyInjection\SyliusAddressingExtension
 
 final class SyliusAddressingExtensionTest extends AbstractExtensionTestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_loads_zone_member_validation_groups_parameter_value_properly(): void
     {
         $this->load([
@@ -36,7 +36,7 @@ final class SyliusAddressingExtensionTest extends AbstractExtensionTestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_loads_empty_zone_member_validation_groups_parameter_value(): void
     {
         $this->load();
