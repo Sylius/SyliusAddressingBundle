@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AddressingBundle\Tests\Repository;
 
+use PHPUnit\Framework\Attributes\Test;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManagerInterface;
 use Fidry\AliceDataFixtures\LoaderInterface;
@@ -31,7 +32,7 @@ final class ZoneRepositoryTest extends KernelTestCase
         $this->loadFixtures();
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_finds_a_single_zone_by_address_and_type(): void
     {
         $address = new Address();
@@ -50,7 +51,7 @@ final class ZoneRepositoryTest extends KernelTestCase
         $this->assertSame('EU', $zoneByCountry->getCode());
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_finds_all_zones_for_a_given_address_with_only_country(): void
     {
         $address = new Address();
@@ -68,7 +69,7 @@ final class ZoneRepositoryTest extends KernelTestCase
         $this->assertArrayHasKey('VISEGRAD_GROUP', $zones);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_finds_all_zones_for_a_given_address_with_restricting_by_scope_if_provided(): void
     {
         $address = new Address();
@@ -88,7 +89,7 @@ final class ZoneRepositoryTest extends KernelTestCase
         $this->assertArrayHasKey('POLISH_PROVINCES', $zones);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_finds_all_zones_by_passing_a_zone_member(): void
     {
         $repository = $this->getRepository();
@@ -104,7 +105,7 @@ final class ZoneRepositoryTest extends KernelTestCase
         $this->assertArrayHasKey('NATO', $zones);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_finds_all_zones_by_passing_a_zone_member_with_restricting_by_scope_if_provided(): void
     {
         $repository = $this->getRepository();

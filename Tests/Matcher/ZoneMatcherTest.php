@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AddressingBundle\Tests\Matcher;
 
+use PHPUnit\Framework\Attributes\Test;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManagerInterface;
 use Fidry\AliceDataFixtures\LoaderInterface;
@@ -27,7 +28,7 @@ final class ZoneMatcherTest extends KernelTestCase
         $this->loadFixtures();
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_matches_all_zones_with_their_parents(): void
     {
         $address = new Address();
@@ -48,7 +49,7 @@ final class ZoneMatcherTest extends KernelTestCase
         $this->assertArrayHasKey('NATO', $matchedZones);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_matches_all_zones_with_their_parents_with_restricting_by_scope(): void
     {
         $address = new Address();

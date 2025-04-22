@@ -13,12 +13,13 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AddressingBundle\Tests\DependencyInjection;
 
+use PHPUnit\Framework\Attributes\Test;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Sylius\Bundle\AddressingBundle\DependencyInjection\SyliusAddressingExtension;
 
 final class SyliusAddressingExtensionTest extends AbstractExtensionTestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_loads_zone_member_validation_groups_parameter_value_properly(): void
     {
         $this->load([
@@ -36,7 +37,7 @@ final class SyliusAddressingExtensionTest extends AbstractExtensionTestCase
         );
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_loads_empty_zone_member_validation_groups_parameter_value(): void
     {
         $this->load();
