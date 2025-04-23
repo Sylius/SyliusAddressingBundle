@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AddressingBundle\Tests\Repository;
 
-use PHPUnit\Framework\Attributes\Test;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManagerInterface;
 use Fidry\AliceDataFixtures\LoaderInterface;
 use Fidry\AliceDataFixtures\Persistence\PurgeMode;
+use PHPUnit\Framework\Attributes\Test;
 use Sylius\Component\Addressing\Model\Address;
 use Sylius\Component\Addressing\Model\ZoneInterface;
 use Sylius\Component\Addressing\Repository\ZoneRepositoryInterface;

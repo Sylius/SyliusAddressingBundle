@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AddressingBundle\Tests\DependencyInjection;
 
-use PHPUnit\Framework\Attributes\Test;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Sylius\Bundle\AddressingBundle\DependencyInjection\SyliusAddressingExtension;
 
 final class SyliusAddressingExtensionTest extends AbstractExtensionTestCase
