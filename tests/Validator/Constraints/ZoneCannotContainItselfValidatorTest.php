@@ -27,9 +27,9 @@ final class ZoneCannotContainItselfValidatorTest extends TestCase
 {
     private ExecutionContextInterface&MockObject $executionContext;
 
-    private ZoneInterface&MockObject $zone;
+    private MockObject&ZoneInterface $zone;
 
-    private ZoneMemberInterface&MockObject $zoneMember;
+    private MockObject&ZoneMemberInterface $zoneMember;
 
     private ZoneCannotContainItselfValidator $zoneCannotContainItselfValidator;
 

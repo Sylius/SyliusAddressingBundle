@@ -25,7 +25,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 final class UniqueProvinceCollectionValidatorTest extends TestCase
 {
-    private MockObject&ExecutionContextInterface $executionContext;
+    private ExecutionContextInterface&MockObject $executionContext;
 
     private UniqueProvinceCollectionValidator $uniqueProvinceCollectionValidator;
 

@@ -28,13 +28,13 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 final class ZoneMemberIntegrityListenerTest extends TestCase
 {
-    private RequestStack&MockObject $requestStack;
+    private MockObject&RequestStack $requestStack;
 
-    private ZoneDeletionCheckerInterface&MockObject $zoneDeletionChecker;
+    private MockObject&ZoneDeletionCheckerInterface $zoneDeletionChecker;
 
     private CountryProvincesDeletionCheckerInterface&MockObject $countryProvincesDeletionChecker;
 
-    private SessionInterface&MockObject $session;
+    private MockObject&SessionInterface $session;
 
     private GenericEvent&MockObject $event;
 

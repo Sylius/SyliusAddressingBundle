@@ -40,7 +40,7 @@ final class CountryNameExtensionTest extends TestCase
 
     public function testTranslatesCountryIntoName(): void
     {
-        /** @var CountryInterface&MockObject $country*/
+        /** @var CountryInterface&MockObject $country */
         $country = $this->createMock(CountryInterface::class);
         $country->expects($this->once())->method('getCode')->willReturn('IE');
         $this->assertSame('Ireland', $this->countryNameExtension->translateCountryIsoCode($country));
@@ -61,7 +61,7 @@ final class CountryNameExtensionTest extends TestCase
 
     public function testFallbacksToAnEmptyStringWhenThereIsNoCode(): void
     {
-        /** @var CountryInterface&MockObject $country*/
+        /** @var CountryInterface&MockObject $country */
         $country = $this->createMock(CountryInterface::class);
 
         $country->expects($this->once())->method('getCode')->willReturn(null);

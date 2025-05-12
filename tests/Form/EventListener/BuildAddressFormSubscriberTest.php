@@ -28,7 +28,8 @@ use Symfony\Component\Form\FormInterface;
 
 final class BuildAddressFormSubscriberTest extends TestCase
 {
-    private RepositoryInterface&MockObject $countryRepository;
+    /** @var RepositoryInterface<CountryInterface>&MockObject */
+    private MockObject&RepositoryInterface $countryRepository;
 
     private FormFactoryInterface&MockObject $formFactory;
 
@@ -77,9 +78,9 @@ final class BuildAddressFormSubscriberTest extends TestCase
             ->expects($this->once())
             ->method('createNamed')
             ->with('provinceCode', ProvinceCodeChoiceType::class, 'province', $this->callback(function (array $options) use ($country) {
-                return is_array($options)
-                    && isset($options['country'])
-                    && $options['country'] === $country
+                return is_array($options) &&
+                    isset($options['country']) &&
+                    $options['country'] === $country
                 ;
             }))
             ->willReturn($provinceForm)
@@ -133,9 +134,9 @@ final class BuildAddressFormSubscriberTest extends TestCase
             ->expects($this->once())
             ->method('createNamed')
             ->with('provinceCode', ProvinceCodeChoiceType::class, null, $this->callback(function (array $options) use ($country) {
-                return is_array($options)
-                    && isset($options['country'])
-                    && $options['country'] === $country
+                return is_array($options) &&
+                    isset($options['country']) &&
+                    $options['country'] === $country
                 ;
             }))
             ->willReturn($provinceForm)

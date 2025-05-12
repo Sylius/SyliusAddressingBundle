@@ -19,7 +19,9 @@ use Sylius\Bundle\AddressingBundle\Validator\Constraints\ProvinceAddressConstrai
 use Sylius\Bundle\AddressingBundle\Validator\Constraints\ProvinceAddressConstraintValidator;
 use Sylius\Component\Addressing\Model\AddressInterface;
 use Sylius\Component\Addressing\Model\Country;
+use Sylius\Component\Addressing\Model\CountryInterface;
 use Sylius\Component\Addressing\Model\Province;
+use Sylius\Component\Addressing\Model\ProvinceInterface;
 use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintViolation;
@@ -29,13 +31,15 @@ use Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface;
 
 final class ProvinceAddressConstraintValidatorTest extends TestCase
 {
-    private RepositoryInterface&MockObject $countryRepository;
+    /** @var RepositoryInterface<CountryInterface>&MockObject */
+    private MockObject&RepositoryInterface $countryRepository;
 
-    private RepositoryInterface&MockObject $provinceRepository;
+    /** @var RepositoryInterface<ProvinceInterface>&MockObject */
+    private MockObject&RepositoryInterface $provinceRepository;
 
     private AddressInterface&MockObject $address;
 
-    private ProvinceAddressConstraint&MockObject $constraint;
+    private MockObject&ProvinceAddressConstraint $constraint;
 
     private ExecutionContextInterface&MockObject $context;
 
