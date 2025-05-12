@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AddressingBundle\Tests\Validator\Constraints;
+namespace Tests\Sylius\Bundle\AddressingBundle\Validator\Constraints;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\MockObject\MockObject;

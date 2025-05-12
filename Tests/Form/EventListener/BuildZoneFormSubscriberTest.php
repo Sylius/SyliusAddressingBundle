@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AddressingBundle\Tests\Form\EventListener;
+namespace Tests\Sylius\Bundle\AddressingBundle\Form\EventListener;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\MockObject\MockObject;
