@@ -9,20 +9,20 @@ sylius:
             country: Pays
             first_name: Prénom
             last_name: Nom
-            phone_number: Téléphone
+            phone_number: Numéro de téléphone
             postcode: Code postal
-            street: Voie
-            province: Etat
+            street: Rue
+            province: Province
             zone: Zone
         country:
-            add_province: Ajouter une région
-            name: Désignation
-            provinces: Etats
+            add_province: Ajouter une province
+            name: Nom
+            provinces: Provinces
             select: Sélectionner
             enabled: Activé
         province:
             name: Nom
-            abbreviation: Abréviation
+            abbreviation: Abbréviation
             select: Sélectionner
         zone:
             add_member: Ajouter un membre
@@ -31,12 +31,12 @@ sylius:
             type: Type
             types:
                 country: Pays
-                province: Etat
+                province: Province
                 zone: Zone
-            scope: Champ d'application
+            scope: Portée
             scopes:
-                all: Tous
+                all: Tout
             select: Sélectionner
-            select_scope: Sélectionnez le champ d'application
+            select_scope: Sélectionner la portée
         zone_member:
             select: Sélectionner
