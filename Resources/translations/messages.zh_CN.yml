@@ -6,7 +6,7 @@ sylius:
         address:
             city: 城市
             company: 公司
-            country: test
+            country: 国家
             first_name: 名字
             last_name: 姓氏
             phone_number: 电话号码
@@ -30,7 +30,7 @@ sylius:
             name: 名称
             type: 类型
             types:
-                country: test
+                country: 国家
                 province: 省/直辖市/自治区
                 zone: 区域
             scope: 范围
