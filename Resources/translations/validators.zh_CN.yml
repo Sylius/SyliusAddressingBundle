@@ -22,11 +22,11 @@ sylius:
     country:
         code:
             not_blank: 请输入国家的 ISO 代码。
-            regex: Code仅可以由字母、 数字、 破折号和下划线。
+            regex: Code仅可以由字母、数字、破折号和下划线组成。
             unique: 国家 ISO 代码必须是唯一的。
     province:
         code:
-            min_length: 省代码必须至少 5 个字符长|省代码必须至少 5 个字符长。
+            min_length: 省代码必须至少 5 个字符长|省代码必须至少 {{ limit }} 个字符长。
             not_blank: 请输入省代码。
             regex: 省代码应具有以下格式 XX-XX （例如US-FL）。
             unique: 省代码必须是唯一的。
@@ -38,14 +38,14 @@ sylius:
             not_blank: 请输入范围。
         code:
             not_blank: 请输入区号。
-            regex: 区域代码仅可以由字母、数字、破折号和下划线组成
+            regex: 区域代码仅可以由字母、数字、破折号和下划线组成。
             unique: 区域编码必须是唯一的。
         members:
-            min_count: 请至少添加 {{limit}} 区成员。
+            min_count: 请至少添加 {{ limit }} 个区成员。
         name:
             not_blank: 请输入区域名称。
     zone_member:
         code:
             not_blank: 请选择一个区成员。
-            regex: 区域成员代码只能由字母、数字、破折号和下面组成。
+            regex: 区域成员代码只能由字母、数字、破折号和下划线组成。
         unique: 该区成员已被使用。
