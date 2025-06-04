@@ -57,7 +57,7 @@ sylius:
         type:
             invalid: 'Le type {{ value }} est invalide. Les types autorisés sont : {{ choices }}.'
         members:
-            min_count: 'Veuillez ajouter au moins {{ limit }} zone membre.'
+            min_count: 'Veuillez ajouter au moins {{ limit }} zone(s) membre(s).'
         name:
             max_length: 'Le nom de la zone ne doit pas comporter plus de {{ limit }} caractères|Le nom de la zone ne doit pas comporter plus de {{ limit }} caractères.'
             min_length: 'Le nom de la zone doit comporter au moins {{ limit }} caractères|Le nom de la zone doit comporter au moins {{ limit }} caractères.'
