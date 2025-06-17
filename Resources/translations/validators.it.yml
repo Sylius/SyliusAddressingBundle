@@ -25,16 +25,16 @@ sylius:
         province:
             valid: 'Per favore seleziona la provincia corretta.'
         street:
-            max_length: 'L\'indirizzo non deve essere più lungo di {{ limit }} carattere.|L\'indirizzo non deve essere più lungo di {{ limit }} caratteri.'
-            min_length: 'L\'indirizzo deve essere lungo almeno {{ limit }} caratteri.|L\'indirizzo deve essere lungo almeno {{ limit }} caratteri.'
-            not_blank: 'Per favore inserisci l\'indirizzo.'
+            max_length: 'L''indirizzo non deve essere più lungo di {{ limit }} carattere.|L''indirizzo non deve essere più lungo di {{ limit }} caratteri.'
+            min_length: 'L''indirizzo deve essere lungo almeno {{ limit }} caratteri.|L''indirizzo deve essere lungo almeno {{ limit }} caratteri.'
+            not_blank: 'Per favore inserisci l''indirizzo.'
         not_shippable: 'Questo indirizzo non è una destinazione di spedizione valida.'
     country:
         code:
             not_blank: 'Per favore inserisci il codice ISO del paese.'
             unique: 'Il codice ISO del paese deve essere unico.'
             country: 'Il codice ISO del paese è invalido.'
-        unique_provinces: 'Tutte le province all\'interno di questo paese devono avere codici e nomi unici.'
+        unique_provinces: 'Tutte le province all''interno di questo paese devono avere codici e nomi unici.'
     province:
         code:
             max_length: 'Il codice non deve essere più lungo di {{ limit }} caratteri.'
@@ -48,7 +48,7 @@ sylius:
             unique: 'Il nome della provincia deve essere unico.'
     zone:
         scope:
-            not_blank: 'Per favore inserisci l\'ambito.'
+            not_blank: 'Per favore inserisci l''ambito.'
         code:
             max_length: 'Il codice non deve essere più lungo di {{ limit }} caratteri.'
             not_blank: 'Per favore inserisci il codice della zona.'
