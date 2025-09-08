@@ -5,25 +5,25 @@ sylius:
     form:
         address:
             city: Ville
-            company: Société
+            company: Compagnie
             country: Pays
             first_name: Prénom
-            last_name: Nom
-            phone_number: Téléphone
+            last_name: Nom de famille
+            phone_number: Numéro de téléphone
             postcode: Code postal
-            street: Voie
-            province: Etat
+            street: Rue
+            province: Province
             zone: Zone
         country:
-            add_province: Ajouter une région
-            name: Désignation
-            provinces: Etats
-            select: Sélectionner
+            add_province: Ajouter une province
+            name: Nom
+            provinces: Provinces
+            select: Choisir
             enabled: Activé
         province:
             name: Nom
             abbreviation: Abréviation
-            select: Sélectionner
+            select: Choisir
         zone:
             add_member: Ajouter un membre
             members: Membres
@@ -31,11 +31,12 @@ sylius:
             type: Type
             types:
                 country: Pays
-                province: Etat
+                province: Province
                 zone: Zone
-            scope: Champ d'application
+            scope: Portée
             scopes:
                 all: Tous
-            select: Sélectionner
+            select: Choisir
+            select_scope: Choisissez la portée
         zone_member:
-            select: Sélectionner
+            select: Choisir

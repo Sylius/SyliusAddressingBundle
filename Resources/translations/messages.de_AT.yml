@@ -11,13 +11,13 @@ sylius:
             last_name: 'Nachname'
             phone_number: 'Telefonnummer'
             postcode: 'Postleitzahl'
-            street: 'Strasse'
-            province: 'Kanton'
+            street: 'Straßenadresse'
+            province: 'Provinz'
             zone: 'Zone'
         country:
-            add_province: 'Kanton hinzufügen'
+            add_province: 'Provinz hinzufügen'
             name: 'Name'
-            provinces: 'Kantone'
+            provinces: 'Provinzen'
             select: 'Auswählen'
             enabled: 'Aktiviert'
         province:
@@ -31,7 +31,7 @@ sylius:
             type: 'Typ'
             types:
                 country: 'Land'
-                province: 'Kanton'
+                province: 'Provinz'
                 zone: 'Zone'
             scope: 'Bereich'
             scopes:
